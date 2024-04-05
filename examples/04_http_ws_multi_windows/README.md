@@ -43,9 +43,9 @@ open ./src-tauri/target/release/bundle/macos/MultiWindows.app
 
 ### Windows
 ```batch
-# Start server
+:: Start server
 python .\server.py
 
-# Run desktop application in a new terminal or by navigating and opening the file
+:: Run desktop application in a new terminal or by navigating and opening the file
 .\src-tauri\target\release\MultiWindows.exe
 ```
