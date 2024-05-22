@@ -27,6 +27,7 @@ class TestApp:
                 v3.VSpacer()
 
                 v3.VSpacer()
+                v3.VBtn("Create Window", click=self.create_window)
                 v3.VBtn(
                     "Open Hello World",
                     disabled=("window_hello_world", False),
@@ -106,6 +107,15 @@ class TestApp:
                         v3.VBtn("Set Size", click=lambda: w.set_size(400, 400))
                         v3.VBtn("Set Title", click=lambda: w.set_title("World"))
                         html.Div("{{ data }}")
+
+    def create_window(self):
+        tauri.Window(
+            url="http://localhost:4444/index.html?ui=hello_world",
+            visible=True,
+            title="New Window",
+            width=300,
+            height=300,
+        )
 
     def build_ui_hello_world(self):
         with SinglePageLayout(
